@@ -1,0 +1,545 @@
+body {
+    margin: 0;
+    background-color: #e4e4e4;
+    padding: 10px;
+}
+
+@font-face {
+    font-family: beachSound;
+    src: url(../a3/fonts/BeachSound.otf);
+}
+
+@font-face {
+    font-family: caviarDreams;
+    src: url(../a3/fonts/CaviarDreams.ttf);
+}
+
+h1 {
+    font-family: beachSound;
+    color: #272525;
+    font-size: 6em;
+}
+
+h2 {
+    font-family: caviarDreams;
+    font-size: 20px;
+    color: #D6DB3A;
+    text-align: center;
+}
+
+h3 {
+    font-family: beachSound;
+    font-size: 4em;
+    color: #272525;
+    text-align: center;
+
+}
+
+h4 {
+    color: #272525;
+    font-size: 3em;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+    text-align: center;
+}
+
+p {
+    color: #272525;
+    font-size: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+    text-align: left;
+    padding-left: 10%;
+
+}
+
+
+a {
+    
+    text-decoration: none;
+    
+}
+
+h4 {
+    color: #272525;
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: lighter;
+    text-align: center;
+}
+.head-method {
+    padding-top: 5%;
+}
+.head-method img {
+    padding-left: 15%;
+    padding-top: 10px;
+    
+
+}
+
+
+
+  /* new nav */
+
+  #menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  z-index: 1;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: lighter;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 300px;
+  height: 100vh;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+  
+  /*HEADER*/
+  
+  .header {
+    
+    padding: 15px;
+    height: 30px;
+    width: 100%;
+  }
+  .header h1 {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size:1.5em;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    
+   
+   
+  }
+
+/*HERO CONTAINER*/
+
+.hero {
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+    margin-top: 20px;
+}
+
+/*HOW TO SECTION*/
+
+.howto {
+    
+    
+    display: flex;
+    min-height: 40vh;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+
+.howtochild h1 {
+    color: rgb(39, 37, 37);
+    font-size: 4em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+  
+  .howtochild h1:nth-child(1) {
+    color: transparent;
+    -webkit-text-stroke: 2px rgb(39, 37, 37);
+  }
+  
+  .howtochild h1:nth-child(2) {
+    color: rgb(39, 37, 37);
+    animation: animate 4s ease-in-out infinite;
+  }
+
+.howtoicon {
+    display: flex;
+    margin: 0 auto;
+    /*grid-template-columns: repeat(5, 200px);*/
+    justify-content: center;
+    align-content: center;
+    margin: 10px;
+    height: 60vh;
+    
+}
+
+.howtoicon img {
+    width: 200px;
+    height: 200px;
+}
+
+.howtoicon img:hover {
+    transform: scale(1.2);
+    background-image: url(../a3/image/webimages/green-circle.png);
+}
+
+.box1, .box2, .box3, .box4, .box5 {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    margin-left: 20px;
+}
+
+.box1-front, .box1-back, .box2-front, .box2-back, .box3-front, .box3-back, .box4-front, .box4-back, .box5-front, .box5-back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.box1-back, .box2-back, .box3-back, .box4-back, .box5-back {
+    transform: rotateY(180deg);
+
+    
+}
+
+.box1.flip, .box2.flip, .box3.flip, .box4.flip, .box5.flip {
+    transform: rotateY(180deg);
+}
+
+.flip {
+    transform: rotateY(180deg);
+}
+
+.back {
+    width: 100%;
+    height: 150px;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 100px;
+    
+}
+
+.method {
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+    margin: 10px;
+    height: 80vh;
+    padding-top: 40px;
+    
+}
+
+.method1 {
+ 
+   margin-left: 5%;
+    margin: 0 auto;
+    padding-left: 5%;
+}
+
+
+
+
+/* ANIMATE.JS HEADING */
+
+.gallery {
+    width: 100%;
+    height: 40vh;
+    text-align: center;
+    margin-top: 200px;
+}
+
+.ml1, .ml2, .ml3, .ml4, .ml5, .ml6 {
+    position: relative;
+    font-weight: 900;
+    font-size: 2em;
+  }
+  
+  .ml1  .text-wrapper, .ml2 .text-wrapper, .ml3 .text-wrapper, .ml4 .text-wrapper, .ml5 .text-wrapper, .ml6 .text-wrapper {
+    position: relative;
+    display: inline-block;
+    padding-top: 0.2em;
+    padding-right: 0.05em;
+    padding-bottom: 0.1em;
+    overflow: hidden;
+  }
+  
+  .ml1 .letter, .ml2 .letter, .ml3 .letter, .ml4 .letter, .ml5 .letter, .ml6 .letter {
+    display: inline-block;
+    line-height: 1em;
+  }
+
+
+  
+
+
+  /* gallery */
+
+  .row > .column {
+    padding: 0 8px;
+  }
+  
+  .row:after {
+    content: "";
+    display: grid;
+    clear: both;
+  }
+  
+  
+  .column {
+    float: left;
+    width: 15%;
+   
+  }
+  
+  /* The Modal (background) */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 600px;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Hide the slides by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+ 
+
+@keyframes animate {
+    0%,
+    100% {
+      clip-path: polygon(
+        0% 45%,
+        16% 44%,
+        33% 50%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  
+    50% {
+      clip-path: polygon(
+        0% 60%,
+        15% 65%,
+        34% 66%,
+        51% 62%,
+        67% 50%,
+        84% 45%,
+        100% 46%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  }
+
+  @media only screen and (max-width: 1300px) {
+    h3 {
+      font-size: 3em;
+    }
+  }
